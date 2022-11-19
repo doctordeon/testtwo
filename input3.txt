@@ -1,0 +1,16 @@
+int var3;
+int sariable;
+sariable = 3;
+int test;
+test = 3;
+string anidthatistoolong;
+int variable
+sariable+test=test2;
+if(test>=sariable) {
+	sariable = test
+}
+if ( test >= var3 )
+{
+	sariable = test - 3;
+	e = d - 2;
+}

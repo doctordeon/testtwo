@@ -1,0 +1,4 @@
+string blank;
+int variable_;
+int answer;
+variable + blank = answer;

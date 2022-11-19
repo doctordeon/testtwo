@@ -1,0 +1,9 @@
+int variable;
+variable = 4;
+int cariable = 232;
+cariable = 232;
+
+float d, e;
+varsit_a = 5;
+varsit_a = varsit_b;
+c = 6;
