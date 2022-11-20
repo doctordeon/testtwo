@@ -41,6 +41,9 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
 
     input4.txt containts 5 errors based on the rules defined:
     * The variable declared on Line 2 was assigned a value on the same line.
-    * The 
+    * ID on line 1 is too long.
+    * ID on line 3 is too long.
+    * An integer cannot contain letters.
 
-8. LR parse table - ATTACHMENT 
+8. LR parse table - ATTACHMENT
+![PARSETABLE](parsetable-1.jpg)

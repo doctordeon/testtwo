@@ -99,7 +99,7 @@ public class TestTwo {
                 index = lines.indexOf(">=");   
                 logical.add(lines.get(index));
             }            
-        }        
+        }
         
         symbolTable.put("Logical Operators", logical);          
         
@@ -127,7 +127,7 @@ public class TestTwo {
 
         List<String> misc = new ArrayList<String>();     
         for (int count = 0;  count < linesArray.length; count++) {
-            if (linesArray[count].matches("\\(|\\)|\\{|\\}")) {  //Use regex here for variables  
+            if (linesArray[count].matches("\\(|\\)|\\{|\\}")) {  //Use regex variables  
                 if (!identifiers.contains(linesArray[count])) {
                     misc.add(linesArray[count]);
                 }
@@ -175,8 +175,23 @@ public class TestTwo {
                     System.out.println(lines.get(i+1)+" is NOT 6-8 chars long. Illegal declaration");
                 }
             }
+            if(test.equals("+|-|*|/|<=|>=|==")){  //rules do not allow integers to be computed directly, must be assigned first
+                boolean charfront = lines.get(i-1).matches("[_a-zA-z]{6,8}");
+                boolean charback = lines.get(i+1).matches("[_a-zA-z]{6,8}");
+                try {
+                    if (!charfront||charback) {
+                        System.out.println("Attempting illegal math operation. Check expression");
+                    }
+                } catch (Exception e) {
+                    System.out.println("exception thrown :)");
+                }
+            }
+            if (test.equals("if")) {
+                
+            }
+            
         }
-        System.out.println("SYMBOL TABLE");
+        System.out.println("Symbols:");
         
         for (Map.Entry<String, List<String>> entry : symbolTable.entrySet()) {
             String key = entry.getKey();
