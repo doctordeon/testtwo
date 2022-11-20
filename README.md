@@ -6,7 +6,7 @@ The question of this assignment is 8-fold.  Answers to these 8 parts are inscrib
 
 1. Rules for recognizing lexemes as proper tokens.
 <STMT> --> <if_stmt> | <while_stmt> | <assign>
-<if_stmt> --> 'if''(<bool_expr>')' <stmt> ['else' <stmt>]
+<if_stmt> --> 'if''(<bool_expr>')' <stmt>
 <while_stmt> --> 'while' '('<bool_expr>')' <stmt>
 <assign> --> 'id' '=' <expr>';'
 <expr> --> <term>{ ('+'|'_') <term> }
@@ -21,7 +21,7 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
 
 3. There is no left-hand recursion, and no two rules begin the same way, so it is also pairwise disjoint.
 
-4. Grammar is not ambiguous
+4. Grammar is not ambiguous.  The rules cannot be represented by more than one parse tree.  (proven in classroom example)
 
 5. The file TestTwo.java is a program that processes all of the lexemes in a given input file
     and produces a list of the tokens in order.

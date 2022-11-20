@@ -186,9 +186,22 @@ public class TestTwo {
                     System.out.println("exception thrown :)");
                 }
             }
-            if (test.equals("if")) {
-                
+            if (test.equals("if")) { //if loop criteria
+                boolean openP = lines.get(i+1).matches("(");
+                boolean expr = lines.get(i-1).matches("[_a-zA-z]{6,8}");
+                boolean closedP = lines.get(i+3).matches(")");
+                if(!openP){
+                    System.out.println("Open parenthesis '(' exptected following 'if' keyword");
+                }
+                if(!expr){
+                    System.out.println("Boolean expression does not match char requirements of language. Try again");
+                }
+                else if(!closedP){
+                    System.out.println("Closing parenthesis ')' exptected following 'if' keyword");
+                }
             }
+
+
             
         }
         System.out.println("Symbols:");
