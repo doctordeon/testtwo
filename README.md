@@ -1,20 +1,24 @@
-**Test 2 - Programming Language Concepts**
-*DUE: 19NOV22 2359EST*
+**Test 2 RESUBMIT - Programming Language Concepts**
+*DUE: 04DEC22 2359EST*
 
 The question of this assignment is 8-fold.  Answers to these 8 parts are inscribed below.
 *For the sake of easy formatting, each section will be referenced in order by number (1-8) and not letter (a-h).*
 
 1. Rules for recognizing lexemes as proper tokens.
-<STMT> --> <if_stmt> | <while_stmt> | <assign>
-<if_stmt> --> 'if''(<bool_expr>')' <stmt>
-<while_stmt> --> 'while' '('<bool_expr>')' <stmt>
-<assign> --> 'id' '=' <expr>';'
-<expr> --> <term>{ ('+'|'_') <term> }
-<term> --> <factor> { ('*'|'\'|'%') <factor>}
-<factor> --> 'id' | 'int_lit' | 'float_lit' | '(' <expr> ')'
+<STMT> --> <if_stmt> | <while_stmt> | <for_stmt> | <assign>
+<if_stmt> --> 'if''(<bool_literal>|<log>')' <stmt>';'
+<log> --> <|>|<=|>=|=|!
+<bool_literal> --> ('true'|'false')
+<while_stmt> --> 'while' '('<bool_literal>')' <stmt>';'
+<for_stmt> --> 
+<assign> --> 'id' '=' <expr>';' | <string>';'
+<string> --> string_literal
+<expr> --> <term>{ ('+'|'-') <term> }
+<term> --> <factor> { ('*'|'\') <factor>}
+<factor> --> 'id' | 'natural_literal' | 'real_literal' | '(' <expr> ')'
 
 
-2. Math Presedence: Parentheses -> Additon -> Subtraction -> Multiplication -> Division -> Modulation
+2. Math Presedence: Parentheses -> Additon -> Multiplication -> Subtraction -> Division
 Boolean Presedence: Parentheses -> Equal-to -> Less-than -> Greater-than
 
 String[] badKeys was originally used to restrict "while","if","int","short","long" from being used as unique keywords.  Because there's an if statement used to limit keywords to 6-8 characters, and all restricted keys are 2-5 characters, no command is needed to prevent use of restricted keys.
@@ -44,6 +48,7 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
     * ID on line 1 is too long.
     * ID on line 3 is too long.
     * An integer cannot contain letters.
+    * An id cannot be included in a term.
 
 8. LR parse table - ATTACHMENT
 ![PARSETABLE](parsetable-1.jpg)

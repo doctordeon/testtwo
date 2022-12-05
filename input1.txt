@@ -1,12 +1,10 @@
 int variable;
 variable = 4;
 int cariable = 232;
-cariable = 232;
+cariable = 23552;
 
 float dixiee
 varsit_a = 5;
 varsit_a = varsit_b;
 cariable = 6;
-if(applebee) {
-    cariable+variable;
-}
+if(truee) cariable+variable;
