@@ -1,4 +1,4 @@
-int var3;
+int var3
 int var_b
 int
 

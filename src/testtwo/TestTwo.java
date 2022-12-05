@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.lang.*;
 
 public class testtwo {
     public static void main(String[] args) throws FileNotFoundException {
@@ -160,6 +159,16 @@ public class testtwo {
             String[] badKeys = new String[]{"while","if","int","short","long"}; //this array is used to ensure keywords cannot
                                                                                 //use restriced words.  Not necessary as char limit is enforced
             
+            //if
+            if (test.matches("[_a-zA-z]{6,8}")) { //math stuff
+                if (lines.get(i+1)=="+"||lines.get(i+1)=="-"||lines.get(i+1)=="/"||lines.get(i+1)=="*"||lines.get(i+1)=="=") {
+                    if (!lines.get(i+2).matches("[_a-zA-z]{6,8}")||!lines.get(i+2).matches("^[0-9]+$")) {
+                        System.out.println("terms of math expression expected not recognized! Should be id or int (+/-?*/div) id or int TRY AGAIN");
+                    }
+                }
+                
+            }
+
             //ensures token following int is an void of digits and 6-8 chars long
             if (test.equals("int")||test.equals("string")) {  
                 
@@ -173,11 +182,7 @@ public class testtwo {
                     System.out.println(lines.get(i+1)+" is NOT 6-8 chars long. Illegal declaration");
                 }                
                 try {
-                    String semitest = lines.get(i+2);
-                    if (!semitest.equals(";")) {
-                        System.out.println("Declarations MUST end with a semicolon!");
-                        System.out.println("CORRECTION "+lines.get(i)+" "+lines.get(i+1)+";\n");
-                    }
+                    
                 } catch (Exception e) {
                     System.out.println("ExceptionThrow: end of ducment");
                 }
@@ -208,14 +213,17 @@ public class testtwo {
             }
             if (test.equals("if")) { //if loop criteria
                 boolean openP = lines.get(i+1).matches("(");
-                boolean expr = lines.get(i-1).matches("[_a-zA-z]{6,8}");
+                boolean expr = lines.get(i+2).matches("[_a-zA-z]{6,8}");
                 boolean closedP = lines.get(i+3).matches(")");
                 if(!openP){
                     System.out.println("Open parenthesis '(' exptected following 'if' keyword");
                 }
-                if(lines.get(i-1)!="true"||lines.get(i-1)!="false"||lines.get(i-1)!="<"||lines.get(i-1)!=">"||lines.get(i-1)!="<="||||lines.get(i-1)!=">="||lines.get(i-1)!="!="||lines.get(i-1)!="="){
+                if(lines.get(i-1)!="true"||lines.get(i-1)!="false"||lines.get(i-1)!="<"||lines.get(i-1)!=">"||lines.get(i-1)!="<="||lines.get(i-1)!=">="||lines.get(i-1)!="!="||lines.get(i-1)!="="){
                     System.out.println("Boolean expression does not match requirements of language. Try again");
                     System.out.println(lines.get(i-1));
+                }
+                if (!expr) {
+                    System.out.println("The expression of 6-8 chars expected was not found.");
                 }
                 else if(!closedP){
                     System.out.println("Closing parenthesis ')' exptected following 'if' keyword");

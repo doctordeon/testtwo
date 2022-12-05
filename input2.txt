@@ -1,4 +1,13 @@
-string blank;
-int variable_;
-int answer;
-variable + blank = answer;
+string blank
+int variable_
+int answer
+int cubed
+variable + blank = answer
+256 + 1000 = 20
+5 * 5 * 5 = cubed
+5 / 5 = 01
+
+variable_ = 5;
+varsit_a = varsit_b;
+cariable = 6;
+if(truee) cariable+variable;

@@ -1,10 +1,10 @@
-int variable;
+int variable
 variable = 4;
-int cariable = 232;
-cariable = 23552;
+int cariable = 232
+cariable = 23552
 
 float dixiee
-varsit_a = 5;
-varsit_a = varsit_b;
-cariable = 6;
-if(truee) cariable+variable;
+varsit_a = 5
+varsit_a = varsit_b
+cariable = 6
+if(truee) cariable+variable

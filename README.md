@@ -6,15 +6,25 @@ The question of this assignment is 8-fold.  Answers to these 8 parts are inscrib
 
 1. Rules for recognizing lexemes as proper tokens.
 <STMT> --> <if_stmt> | <while_stmt> | <for_stmt> | <assign>
-<if_stmt> --> 'if''(<bool_literal>|<log>')' <stmt>';'
+
+<if_stmt> --> 'if''(<bool_literal>')' <stmt>'
+
 <log> --> <|>|<=|>=|=|!
+
 <bool_literal> --> ('true'|'false')
-<while_stmt> --> 'while' '('<bool_literal>')' <stmt>';'
+
+<while_stmt> --> 'while' '('<bool_literal>')' <stmt>'
+
 <for_stmt> --> 
-<assign> --> 'id' '=' <expr>';' | <string>';'
+
+<assign> --> 'id' '=' <expr>';' | <string>'
+
 <string> --> string_literal
-<expr> --> <term>{ ('+'|'-') <term> }
+
+<expr> --> id  ('+'|'-')) id 
+
 <term> --> <factor> { ('*'|'\') <factor>}
+
 <factor> --> 'id' | 'natural_literal' | 'real_literal' | '(' <expr> ')'
 
 
@@ -25,7 +35,8 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
 
 3. There is no left-hand recursion, and no two rules begin the same way, so it is also pairwise disjoint.
 
-4. Grammar is not ambiguous.  The rules cannot be represented by more than one parse tree.  (proven in classroom example)
+4. Grammar is not ambiguous.  The rules cannot be represented by more than one parse tree.
+![PARSETREE](tree.jpg)
 
 5. The file TestTwo.java is a program that processes all of the lexemes in a given input file
     and produces a list of the tokens in order.
@@ -39,7 +50,7 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
     input3.txt contains 5 errors based on the rules defined:
     * The variable declared on line 1 contains a number and too short.
     * ID on line 6 is too long.
-    * The declaration on Line 7 does not conclude in a semicolon.
+    * Curly braces do not conform with language rules.
     * The variables on Lines 1 and 4 are not long enough.
     * An integer cannot contain letters.
 
@@ -47,7 +58,7 @@ String[] badKeys was originally used to restrict "while","if","int","short","lon
     * The variable declared on Line 2 was assigned a value on the same line.
     * ID on line 1 is too long.
     * ID on line 3 is too long.
-    * An integer cannot contain letters.
+    * An integer variable cannot contain letters.
     * An id cannot be included in a term.
 
 8. LR parse table - ATTACHMENT
