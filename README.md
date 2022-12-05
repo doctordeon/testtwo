@@ -5,17 +5,17 @@ The question of this assignment is 8-fold.  Answers to these 8 parts are inscrib
 *For the sake of easy formatting, each section will be referenced in order by number (1-8) and not letter (a-h).*
 
 1. Rules for recognizing lexemes as proper tokens.
-//<STMT> --> <if_stmt> | <while_stmt> | <for_stmt> | <assign>
-//<if_stmt> --> 'if''(<bool_literal>')' <stmt>'
-//<log> --> <|>|<=|>=|=|!
-//<bool_literal> --> ('true'|'false')
-//<while_stmt> --> 'while' '('<bool_literal>')' <stmt>'
-//<for_stmt> --> 
-//<assign> --> 'id' '=' <expr>';' | <string>'
-//<string> --> string_literal
-//<expr> --> id  ('+'|'-')) id 
-//<term> --> <factor> { ('*'|'\') <factor>}
-//<factor> --> 'id' | 'natural_literal' | 'real_literal' | '(' <expr> ')'
+//<>STMT --> <if_stmt> | <while_stmt> | <for_stmt> | <assign>
+//<>if_stmt --> 'if''(<bool_literal>')' <stmt>'
+//<>log --> <|>|<=|>=|=|!
+//<>bool_literal --> ('true'|'false')
+//<>while_stmt --> 'while' '('<bool_literal>')' <stmt>'
+//<>for_stmt --> 
+//<>assign --> 'id' '=' <expr>';' | <string>'
+//<>string --> string_literal
+//<>expr --> id  ('+'|'-')) id 
+//<>term --> <factor> { ('*'|'\') <factor>}
+//<>factor --> 'id' | 'natural_literal' | 'real_literal' | '(' <expr> ')'
 
 
 2. Math Presedence: Parentheses -> Additon -> Multiplication -> Subtraction -> Division
