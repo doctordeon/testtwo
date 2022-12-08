@@ -11,7 +11,8 @@ The question of this assignment is 8-fold.  Answers to these 8 parts are inscrib
 //<>bool_literal --> ('true'|'false')
 //<>while_stmt --> 'while' '('<bool_literal>')' <stmt>'
 //<>for_stmt --> 
-//<>assign --> 'id' '=' <expr>';' | <string>'
+//<>assign --> <id> '=' <expr> | <string>'
+//<>id --> <string>
 //<>string --> string_literal
 //<>expr --> id  ('+'|'-')) id 
 //<>term --> <factor> { ('*'|'\') <factor>}

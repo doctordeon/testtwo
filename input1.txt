@@ -7,4 +7,5 @@ float dixiee
 varsit_a = 5
 varsit_a = varsit_b
 cariable = 6
-if(truee) cariable+variable
+if( true ) cariable+variable
+if( false ) cariable+variable

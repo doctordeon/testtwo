@@ -169,6 +169,28 @@ public class testtwo {
                 
             }
 
+
+            //IF||WHILE LOOP CRITERIA
+            if (test.equals("if")||test.equals("while")) {
+                boolean openP = lines.get(i+1).matches("(");
+                boolean bool_true = lines.get(i+1).matches("true");
+                boolean bool_false = lines.get(i+1).matches("false");
+                boolean closedP = lines.get(i+3).matches(")");
+                if(!openP){
+                    System.out.println("Open parenthesis '(' exptected following 'if' keyword");
+                }
+                if(lines.get(i+1)!="true"||lines.get(i-1)!="false"||lines.get(i-1)!="<"||lines.get(i-1)!=">"||lines.get(i-1)!="<="||lines.get(i-1)!=">="||lines.get(i-1)!="!="||lines.get(i-1)!="="){
+                    System.out.println("Boolean expression does not match requirements of language. Try again");
+                    System.out.println(lines.get(i-1));
+                }
+                if (!bool_true||!bool_false) {
+                    System.out.println("The expression of 6-8 chars expected was not found.");
+                }
+                else if(!closedP){
+                    System.out.println("Closing parenthesis ')' exptected following 'if' keyword");
+                }
+            }
+
             //ensures token following int is an void of digits and 6-8 chars long
             if (test.equals("int")||test.equals("string")) {  
                 
@@ -188,8 +210,8 @@ public class testtwo {
                 }
             }
 
-            //ensures token following 'string' has is between 6-8 chars long
-            if (test.equals("string")) {  
+            //ensures token following 'string' or 'int' for declaration is 6-8 characters long
+            if (test.equals("string")||test.equals("int")) {  
                 boolean varnums = lines.get(i+1).matches("^[0-9]+$");
                 boolean charlimit = lines.get(i+1).matches("[_a-zA-z]{6,8}");
                 if (!varnums) {
@@ -211,14 +233,16 @@ public class testtwo {
                     System.out.println("exception thrown :)");
                 }
             }
-            if (test.equals("if")) { //if loop criteria
+
+            //IF LOOP CRITERIA
+            if (test.equals("iff")) { //if loop criteria
                 boolean openP = lines.get(i+1).matches("(");
                 boolean expr = lines.get(i+2).matches("[_a-zA-z]{6,8}");
                 boolean closedP = lines.get(i+3).matches(")");
                 if(!openP){
                     System.out.println("Open parenthesis '(' exptected following 'if' keyword");
                 }
-                if(lines.get(i-1)!="true"||lines.get(i-1)!="false"||lines.get(i-1)!="<"||lines.get(i-1)!=">"||lines.get(i-1)!="<="||lines.get(i-1)!=">="||lines.get(i-1)!="!="||lines.get(i-1)!="="){
+                if(lines.get(i+1)!="true"||lines.get(i-1)!="false"||lines.get(i-1)!="<"||lines.get(i-1)!=">"||lines.get(i-1)!="<="||lines.get(i-1)!=">="||lines.get(i-1)!="!="||lines.get(i-1)!="="){
                     System.out.println("Boolean expression does not match requirements of language. Try again");
                     System.out.println(lines.get(i-1));
                 }
@@ -228,10 +252,7 @@ public class testtwo {
                 else if(!closedP){
                     System.out.println("Closing parenthesis ')' exptected following 'if' keyword");
                 }
-            }
-
-
-            
+            }            
         }
         System.out.println("Symbols:");
         
